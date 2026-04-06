@@ -10,9 +10,16 @@ RUN apt-get update \
     python3 \
     build-essential \
     zip \
+    chromium \
+    fonts-liberation \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
   && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g openclaw@2026.3.13 clawhub@latest
+RUN npm install -g openclaw@2026.4.2 clawhub@latest
 
 # Backward-compatibility shim for older OPENCLAW_ENTRY values.
 RUN mkdir -p /openclaw \
